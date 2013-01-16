@@ -30,7 +30,7 @@ Or install it yourself as:
 3. Include the new file when you to have an editable content
 4. Add a css like this (feel free to customize it) :
 
-    footer {
+    #toolbar {
       position:fixed;
       left:0px;
       bottom:0px;
