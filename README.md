@@ -2,56 +2,40 @@
 
 This is a frontend editor for rails using the frontendeditor gem and ckeditor.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'frontendeditor_ckeditor'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install frontendeditor_ckeditor
-
-## Usage
+## Installation and usage
 
 1. Add `gem 'frontendeditor_ckeditor'` in your Gemfile
 2. Add file named frontendeditor.coffee (for example) and put this :
 
-    //= require ckeditor/init_ckeditor
-    //= require frontend_editor/frontend_editor
+        //= require ckeditor/init_ckeditor
+        //= require frontend_editor/frontend_editor
 
-    $(document).ready ->
-      FrontendEditor.init()
+        $(document).ready ->
+          FrontendEditor.init()
 
 3. Include the new file when you to have an editable content
 4. Add a css like this (feel free to customize it) :
 
-    footer {
-      position:fixed;
-      left:0px;
-      bottom:0px;
-      width:100%;
-      background:#FFF;
-      padding-left: 10px;
-    }
+        footer {
+          position:fixed;
+          left:0px;
+          bottom:0px;
+          width:100%;
+          background:#FFF;
+          padding-left: 10px;
+        }
 
-    footer a {
-      margin: 10px;
-    }
+        footer a {
+          margin: 10px;
+        }
 
-    footer a:hover {
-      cursor: pointer
-    }
+        footer a:hover {
+          cursor: pointer
+        }
 
 5. Place your the part than you whant to be editable in the helper like this :
 
-    <%= editable(@post) do %>
-      <% @post.body %>
-    <% end %>
+        <%= editable(@post) { @post.body } %>
 
 6. Now, when you on the editable link, the field is hillighted. Click on the save button to save it.
 
