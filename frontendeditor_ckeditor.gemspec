@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "frontendeditor"
+  gem.add_dependency "lafeber_ckeditor"
 end
