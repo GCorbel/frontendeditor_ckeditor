@@ -13,7 +13,7 @@ This is a frontend editor for rails using the frontendeditor gem and ckeditor.
         $(document).ready ->
           FrontendEditor.init()
 
-3. Include the new file when you to have an editable content
+3. Include the new file where you to have an editable content
 4. Add a css like this (feel free to customize it) :
 
         footer {
