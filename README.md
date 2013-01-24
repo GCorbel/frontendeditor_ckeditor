@@ -7,6 +7,11 @@ This is a frontend editor for rails using the frontendeditor gem and ckeditor.
 1. Add `gem 'frontendeditor_ckeditor'` in your Gemfile
 2. Add file named frontendeditor.coffee (for example) and put this :
 
+        //= require jquery
+        //= require jquery_ujs
+        //= require underscore
+        //= require backbone
+        //= require jquery.ui.effect-highlight.js
         //= require ckeditor/init_ckeditor
         //= require frontend_editor/frontend_editor
 
