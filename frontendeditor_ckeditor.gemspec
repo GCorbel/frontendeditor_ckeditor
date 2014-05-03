@@ -16,5 +16,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "frontendeditor"
-  gem.add_dependency "ckeditor", "4.0.0"
+  gem.add_dependency "ckeditor", ">= 4.0.0"
 end

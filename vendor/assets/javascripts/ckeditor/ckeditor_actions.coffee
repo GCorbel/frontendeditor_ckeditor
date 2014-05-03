@@ -27,7 +27,9 @@ Editor.on('instanceCreated', ( event ) ->
   editor = event.editor
   element = editor.element
   editor.on('configLoaded', () ->
+    editor.config.extraPlugins = 'sourcedialog'
     editor.config.toolbarGroups = [
+      { name: 'source',    groups: [ 'sourcedialog' ] }
       { name: 'editing',    groups: [ 'basicstyles', 'links' ] }
       { name: 'styles' }
       '/'
