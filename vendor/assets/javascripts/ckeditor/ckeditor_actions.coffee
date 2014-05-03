@@ -15,9 +15,16 @@ Editor.deactive = ->
 Editor.commitAll = ->
   $.each(CKEDITOR.instances, (key, editor) ->
     dataset = editor.container.$.dataset
-    model = FrontendEditor.getCurrentModel(dataset.object)
-    model.set('id', dataset.id)
-    model.set(dataset.attribute, editor.getData())
+    model = FrontendEditor.findCurrentOrCreateModel(dataset.object)
+
+    values = id: dataset.id
+    values[dataset.attribute] = editor.getData()
+
+    attributes =
+      values: values
+      prefix: dataset.prefix
+      objectName: dataset.object
+    model.setAttributes(attributes)
   )
 
 Editor.el = ->
