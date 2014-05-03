@@ -16,7 +16,7 @@ Editor.commitAll = ->
   $.each(CKEDITOR.instances, (key, editor) ->
     dataset = editor.container.$.dataset
     model = FrontendEditor.getCurrentModel(dataset.object)
-    model.id = dataset.id
+    model.set('id', dataset.id)
     model.set(dataset.attribute, editor.getData())
   )
 
