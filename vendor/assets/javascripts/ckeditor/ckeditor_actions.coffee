@@ -1,14 +1,13 @@
 window.Editor = CKEDITOR
 
 Editor.active = ->
-  target = $('.editable-long-text')
-  target.attr('contenteditable',true)
-  target.effect('highlight', duration: 5000)
-  for div in target
+  @el().attr('contenteditable',true)
+  @el().effect('highlight', duration: 5000)
+  for div in @el()
     CKEDITOR.inline(div)
 
 Editor.deactive = ->
-  $('.editable-long-text').attr('contenteditable', false)
+  @el().attr('contenteditable', false)
   $.each(CKEDITOR.instances, (key, editor) ->
     editor.destroy()
   )
@@ -20,6 +19,9 @@ Editor.commitAll = ->
     model.id = dataset.id
     model.set(dataset.attribute, editor.getData())
   )
+
+Editor.el = ->
+  $('.editable-long-text')
 
 Editor.on('instanceCreated', ( event ) ->
   editor = event.editor
